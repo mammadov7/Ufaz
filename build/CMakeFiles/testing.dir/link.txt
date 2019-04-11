@@ -1,0 +1,1 @@
+/usr/bin/cc  -Wextra -g    CMakeFiles/testing.dir/src/testmain.c.o CMakeFiles/testing.dir/src/header.c.o  -o testing 

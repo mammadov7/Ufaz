@@ -67,6 +67,17 @@ rebuild_cache/fast: rebuild_cache
 
 .PHONY : rebuild_cache/fast
 
+# Special rule for the target test
+test:
+	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --cyan "Running tests..."
+	/usr/bin/ctest --force-new-ctest-process $(ARGS)
+.PHONY : test
+
+# Special rule for the target test
+test/fast: test
+
+.PHONY : test/fast
+
 # Special rule for the target edit_cache
 edit_cache:
 	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --cyan "No interactive CMake dialog available..."
@@ -111,17 +122,30 @@ depend:
 .PHONY : depend
 
 #=============================================================================
-# Target rules for targets named proj
+# Target rules for targets named main
 
 # Build rule for target.
-proj: cmake_check_build_system
-	$(MAKE) -f CMakeFiles/Makefile2 proj
-.PHONY : proj
+main: cmake_check_build_system
+	$(MAKE) -f CMakeFiles/Makefile2 main
+.PHONY : main
 
 # fast build rule for target.
-proj/fast:
-	$(MAKE) -f CMakeFiles/proj.dir/build.make CMakeFiles/proj.dir/build
-.PHONY : proj/fast
+main/fast:
+	$(MAKE) -f CMakeFiles/main.dir/build.make CMakeFiles/main.dir/build
+.PHONY : main/fast
+
+#=============================================================================
+# Target rules for targets named testing
+
+# Build rule for target.
+testing: cmake_check_build_system
+	$(MAKE) -f CMakeFiles/Makefile2 testing
+.PHONY : testing
+
+# fast build rule for target.
+testing/fast:
+	$(MAKE) -f CMakeFiles/testing.dir/build.make CMakeFiles/testing.dir/build
+.PHONY : testing/fast
 
 src/header.o: src/header.c.o
 
@@ -129,7 +153,8 @@ src/header.o: src/header.c.o
 
 # target to build an object file
 src/header.c.o:
-	$(MAKE) -f CMakeFiles/proj.dir/build.make CMakeFiles/proj.dir/src/header.c.o
+	$(MAKE) -f CMakeFiles/main.dir/build.make CMakeFiles/main.dir/src/header.c.o
+	$(MAKE) -f CMakeFiles/testing.dir/build.make CMakeFiles/testing.dir/src/header.c.o
 .PHONY : src/header.c.o
 
 src/header.i: src/header.c.i
@@ -138,7 +163,8 @@ src/header.i: src/header.c.i
 
 # target to preprocess a source file
 src/header.c.i:
-	$(MAKE) -f CMakeFiles/proj.dir/build.make CMakeFiles/proj.dir/src/header.c.i
+	$(MAKE) -f CMakeFiles/main.dir/build.make CMakeFiles/main.dir/src/header.c.i
+	$(MAKE) -f CMakeFiles/testing.dir/build.make CMakeFiles/testing.dir/src/header.c.i
 .PHONY : src/header.c.i
 
 src/header.s: src/header.c.s
@@ -147,7 +173,8 @@ src/header.s: src/header.c.s
 
 # target to generate assembly for a file
 src/header.c.s:
-	$(MAKE) -f CMakeFiles/proj.dir/build.make CMakeFiles/proj.dir/src/header.c.s
+	$(MAKE) -f CMakeFiles/main.dir/build.make CMakeFiles/main.dir/src/header.c.s
+	$(MAKE) -f CMakeFiles/testing.dir/build.make CMakeFiles/testing.dir/src/header.c.s
 .PHONY : src/header.c.s
 
 src/main.o: src/main.c.o
@@ -156,7 +183,7 @@ src/main.o: src/main.c.o
 
 # target to build an object file
 src/main.c.o:
-	$(MAKE) -f CMakeFiles/proj.dir/build.make CMakeFiles/proj.dir/src/main.c.o
+	$(MAKE) -f CMakeFiles/main.dir/build.make CMakeFiles/main.dir/src/main.c.o
 .PHONY : src/main.c.o
 
 src/main.i: src/main.c.i
@@ -165,7 +192,7 @@ src/main.i: src/main.c.i
 
 # target to preprocess a source file
 src/main.c.i:
-	$(MAKE) -f CMakeFiles/proj.dir/build.make CMakeFiles/proj.dir/src/main.c.i
+	$(MAKE) -f CMakeFiles/main.dir/build.make CMakeFiles/main.dir/src/main.c.i
 .PHONY : src/main.c.i
 
 src/main.s: src/main.c.s
@@ -174,8 +201,35 @@ src/main.s: src/main.c.s
 
 # target to generate assembly for a file
 src/main.c.s:
-	$(MAKE) -f CMakeFiles/proj.dir/build.make CMakeFiles/proj.dir/src/main.c.s
+	$(MAKE) -f CMakeFiles/main.dir/build.make CMakeFiles/main.dir/src/main.c.s
 .PHONY : src/main.c.s
+
+src/testmain.o: src/testmain.c.o
+
+.PHONY : src/testmain.o
+
+# target to build an object file
+src/testmain.c.o:
+	$(MAKE) -f CMakeFiles/testing.dir/build.make CMakeFiles/testing.dir/src/testmain.c.o
+.PHONY : src/testmain.c.o
+
+src/testmain.i: src/testmain.c.i
+
+.PHONY : src/testmain.i
+
+# target to preprocess a source file
+src/testmain.c.i:
+	$(MAKE) -f CMakeFiles/testing.dir/build.make CMakeFiles/testing.dir/src/testmain.c.i
+.PHONY : src/testmain.c.i
+
+src/testmain.s: src/testmain.c.s
+
+.PHONY : src/testmain.s
+
+# target to generate assembly for a file
+src/testmain.c.s:
+	$(MAKE) -f CMakeFiles/testing.dir/build.make CMakeFiles/testing.dir/src/testmain.c.s
+.PHONY : src/testmain.c.s
 
 # Help Target
 help:
@@ -184,14 +238,19 @@ help:
 	@echo "... clean"
 	@echo "... depend"
 	@echo "... rebuild_cache"
-	@echo "... proj"
+	@echo "... test"
 	@echo "... edit_cache"
+	@echo "... main"
+	@echo "... testing"
 	@echo "... src/header.o"
 	@echo "... src/header.i"
 	@echo "... src/header.s"
 	@echo "... src/main.o"
 	@echo "... src/main.i"
 	@echo "... src/main.s"
+	@echo "... src/testmain.o"
+	@echo "... src/testmain.i"
+	@echo "... src/testmain.s"
 .PHONY : help
 
 

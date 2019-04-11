@@ -4,8 +4,8 @@ set(CMAKE_DEPENDS_LANGUAGES
   )
 # The set of files for implicit dependencies of each language:
 set(CMAKE_DEPENDS_CHECK_C
-  "/home/ali/Desktop/DT/CUnit/my_test/src/header.c" "/home/ali/Desktop/DT/CUnit/my_test/build/CMakeFiles/proj.dir/src/header.c.o"
-  "/home/ali/Desktop/DT/CUnit/my_test/src/main.c" "/home/ali/Desktop/DT/CUnit/my_test/build/CMakeFiles/proj.dir/src/main.c.o"
+  "/home/ali/Desktop/DT/CUnit/my_test/src/header.c" "/home/ali/Desktop/DT/CUnit/my_test/build/CMakeFiles/testing.dir/src/header.c.o"
+  "/home/ali/Desktop/DT/CUnit/my_test/src/testmain.c" "/home/ali/Desktop/DT/CUnit/my_test/build/CMakeFiles/testing.dir/src/testmain.c.o"
   )
 set(CMAKE_C_COMPILER_ID "GNU")
 

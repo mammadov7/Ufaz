@@ -1,1 +1,0 @@
-/usr/bin/cc  -Wextra -g   CMakeFiles/proj.dir/src/header.c.o CMakeFiles/proj.dir/src/main.c.o  -o proj -lm 

@@ -60,39 +60,76 @@ CMAKE_SOURCE_DIR = /home/ali/Desktop/DT/CUnit/my_test
 CMAKE_BINARY_DIR = /home/ali/Desktop/DT/CUnit/my_test/build
 
 #=============================================================================
-# Target rules for target CMakeFiles/proj.dir
+# Target rules for target CMakeFiles/main.dir
 
 # All Build rule for target.
-CMakeFiles/proj.dir/all:
-	$(MAKE) -f CMakeFiles/proj.dir/build.make CMakeFiles/proj.dir/depend
-	$(MAKE) -f CMakeFiles/proj.dir/build.make CMakeFiles/proj.dir/build
-	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --progress-dir=/home/ali/Desktop/DT/CUnit/my_test/build/CMakeFiles --progress-num=1,2,3 "Built target proj"
-.PHONY : CMakeFiles/proj.dir/all
+CMakeFiles/main.dir/all:
+	$(MAKE) -f CMakeFiles/main.dir/build.make CMakeFiles/main.dir/depend
+	$(MAKE) -f CMakeFiles/main.dir/build.make CMakeFiles/main.dir/build
+	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --progress-dir=/home/ali/Desktop/DT/CUnit/my_test/build/CMakeFiles --progress-num=1,2,3 "Built target main"
+.PHONY : CMakeFiles/main.dir/all
 
 # Include target in all.
-all: CMakeFiles/proj.dir/all
+all: CMakeFiles/main.dir/all
 
 .PHONY : all
 
 # Build rule for subdir invocation for target.
-CMakeFiles/proj.dir/rule: cmake_check_build_system
+CMakeFiles/main.dir/rule: cmake_check_build_system
 	$(CMAKE_COMMAND) -E cmake_progress_start /home/ali/Desktop/DT/CUnit/my_test/build/CMakeFiles 3
-	$(MAKE) -f CMakeFiles/Makefile2 CMakeFiles/proj.dir/all
+	$(MAKE) -f CMakeFiles/Makefile2 CMakeFiles/main.dir/all
 	$(CMAKE_COMMAND) -E cmake_progress_start /home/ali/Desktop/DT/CUnit/my_test/build/CMakeFiles 0
-.PHONY : CMakeFiles/proj.dir/rule
+.PHONY : CMakeFiles/main.dir/rule
 
 # Convenience name for target.
-proj: CMakeFiles/proj.dir/rule
+main: CMakeFiles/main.dir/rule
 
-.PHONY : proj
-
-# clean rule for target.
-CMakeFiles/proj.dir/clean:
-	$(MAKE) -f CMakeFiles/proj.dir/build.make CMakeFiles/proj.dir/clean
-.PHONY : CMakeFiles/proj.dir/clean
+.PHONY : main
 
 # clean rule for target.
-clean: CMakeFiles/proj.dir/clean
+CMakeFiles/main.dir/clean:
+	$(MAKE) -f CMakeFiles/main.dir/build.make CMakeFiles/main.dir/clean
+.PHONY : CMakeFiles/main.dir/clean
+
+# clean rule for target.
+clean: CMakeFiles/main.dir/clean
+
+.PHONY : clean
+
+#=============================================================================
+# Target rules for target CMakeFiles/testing.dir
+
+# All Build rule for target.
+CMakeFiles/testing.dir/all:
+	$(MAKE) -f CMakeFiles/testing.dir/build.make CMakeFiles/testing.dir/depend
+	$(MAKE) -f CMakeFiles/testing.dir/build.make CMakeFiles/testing.dir/build
+	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --progress-dir=/home/ali/Desktop/DT/CUnit/my_test/build/CMakeFiles --progress-num=4,5,6 "Built target testing"
+.PHONY : CMakeFiles/testing.dir/all
+
+# Include target in all.
+all: CMakeFiles/testing.dir/all
+
+.PHONY : all
+
+# Build rule for subdir invocation for target.
+CMakeFiles/testing.dir/rule: cmake_check_build_system
+	$(CMAKE_COMMAND) -E cmake_progress_start /home/ali/Desktop/DT/CUnit/my_test/build/CMakeFiles 3
+	$(MAKE) -f CMakeFiles/Makefile2 CMakeFiles/testing.dir/all
+	$(CMAKE_COMMAND) -E cmake_progress_start /home/ali/Desktop/DT/CUnit/my_test/build/CMakeFiles 0
+.PHONY : CMakeFiles/testing.dir/rule
+
+# Convenience name for target.
+testing: CMakeFiles/testing.dir/rule
+
+.PHONY : testing
+
+# clean rule for target.
+CMakeFiles/testing.dir/clean:
+	$(MAKE) -f CMakeFiles/testing.dir/build.make CMakeFiles/testing.dir/clean
+.PHONY : CMakeFiles/testing.dir/clean
+
+# clean rule for target.
+clean: CMakeFiles/testing.dir/clean
 
 .PHONY : clean
 

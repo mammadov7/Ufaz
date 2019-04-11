@@ -1,3 +1,5 @@
 /home/ali/Desktop/DT/CUnit/my_test/build/CMakeFiles/rebuild_cache.dir
-/home/ali/Desktop/DT/CUnit/my_test/build/CMakeFiles/proj.dir
+/home/ali/Desktop/DT/CUnit/my_test/build/CMakeFiles/test.dir
 /home/ali/Desktop/DT/CUnit/my_test/build/CMakeFiles/edit_cache.dir
+/home/ali/Desktop/DT/CUnit/my_test/build/CMakeFiles/main.dir
+/home/ali/Desktop/DT/CUnit/my_test/build/CMakeFiles/testing.dir
